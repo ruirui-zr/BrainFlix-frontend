@@ -1,0 +1,50 @@
+@use '../../styles/partials/variables' as *;
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+}
+
+.mobile__headerbar{
+    display: flex;
+    align-items:center;
+    width: 100%; 
+}
+.search-container{
+    flex: 1;
+    max-width: 90%; 
+    position: relative;
+}
+
+
+.avatar--tablet{
+    display: none;
+}
+
+
+@media (min-width: $tablet-break-point) {
+    header{
+        display: flex;
+        align-items: center; /* 确保头像和搜索栏垂直居中对齐 */
+        width:100%;
+    }
+
+    .tablet__headerbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        right: 0px;
+        width: 80%; 
+        margin-left: auto;
+        align-items: center; /* Vertically align the items */
+    }
+    .avatar--mobile{
+        display: none;
+    }
+    .avatar--tablet{
+        display:block;
+    }
+
+}
+
+@media (min-width: $desktop-break-point) {}

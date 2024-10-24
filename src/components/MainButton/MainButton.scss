@@ -1,0 +1,22 @@
+@use '../../styles/partials/variables' as *;
+
+.main-button{
+    wIdth: 95%;
+    background-color: $BrainFlix-Blue;
+    position: relative; /* 相对于按钮定位图标 */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 让文本内容居中 */
+    padding: 10px 40px; /* 调整左右内边距，确保文字不会被图标覆盖 */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+
+    &__icon{
+        position: absolute; /* 绝对定位图标，使其在按钮的最左侧 */
+        left: 10px; /* 根据需要调整图标距离按钮左边的距离 */
+        width: 20px; /* 调整图标大小 */
+        height: 20px;
+    }
+}
