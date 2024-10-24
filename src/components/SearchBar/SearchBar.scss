@@ -1,0 +1,23 @@
+@use '../../styles/partials/variables' as *;
+
+.search-icon {
+    position: absolute;
+    left: 10px; /* 图标距离左侧的距离 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* 根据需要调整图标大小 */
+    height: 20px; /* 根据需要调整图标大小 */
+}
+
+.search-input {
+    width: 90%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid $Silver;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: $BrainFlix-Black;
+}
