@@ -1,3 +1,42 @@
-.selected-video__image{
+@use '../../styles/partials/variables' as *;
+
+.selected__image{
     width: 400px;
 }
+
+
+
+.divider{
+    height: 1px;                 
+    background-color:$Mercury;   
+    margin: 20px 0;   
+    border:none;
+}
+
+.video-meta{
+    display: flex;
+    flex-direction: row;
+}
+
+.channel-date{
+    display: flex;
+    flex-direction: column;
+}
+
+.views-likes{
+    display: flex;
+    flex-direction: column;
+}
+
+.views{
+    display: flex;
+}
+
+.likes{
+    display: flex;
+}
+
+.selected__channel{
+    font-weight: bold;
+}
+
