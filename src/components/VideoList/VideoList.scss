@@ -1,4 +1,31 @@
-.poster-container video{
-    width: 100%;
-    margin: auto;
+@use '../../styles/partials/variables' as *;
+
+.list__video{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.video-container{
+    width: 40%;
+    height: auto;
+
+}
+
+.list__image{
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+}
+
+.list-meta{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.section-header{
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    color: $Silver;
 }

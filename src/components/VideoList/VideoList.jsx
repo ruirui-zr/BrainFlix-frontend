@@ -3,27 +3,23 @@ import { useState } from "react"
 import Videos from "../../data/video-details.json"
 import "./VideoList.scss"
 
-export default function VideoList(){
+export default function VideoList({filteredVideos, handleSelectVideo}){
 
-    // const [activeVideoId, setActiveVideoId] = useState(null)
-
-    // function changeActiveVideoId(id) {
-    //     setActiveVideoId(id)
-    // }
 
     return (
         <section className="video-list">
-            {Videos.map((video) => (
-                <div key = {video.id}>
-                    <div className="Video__title">{video.id}</div>
-                    <div className="poster-container">
-                        <video controls poster={video.image}> </video>
+            <div className="section-header">NEXT VIDEOS</div>
+            {filteredVideos.map((video) => (
+                <div className = "list__video" key = {video.id} onClick={ () => handleSelectVideo(video.id)}>
+                    <div className="video-container">
+                        <video className = "list__image" controls poster={video.image}> </video>
                     </div>
-                    <div className="Video__title">{video.title}</div>
-                    <div className="Video__channel">{video.channel}</div>
-                    
+                    <div className="list-meta">
+                        <div className = "list__title">{video.title}</div>
+                        <div className = "list__channel">{video.channel}</div>
+                    </div>
                 </div>
-))}
+            ))}
         </section>
     )
 }  
