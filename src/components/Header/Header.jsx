@@ -7,7 +7,7 @@ import Logo from "../Logo/Logo.jsx"
 export default function Header(){
     return (
         <header>
-            <div class="logo-container">
+            <div className="logo-container">
                 <Logo />
             </div>
             <div className="tablet__headerbar">
