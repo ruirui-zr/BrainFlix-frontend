@@ -1,94 +1,71 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
 
 html{
     font-family: "AvenirNextLTPro";
-}
-
-
-.form{
-    padding-left: 28px;
-    padding-right: 28px;
-
-    &__title{
-        padding-top: 45px;
-    }
-
-    &__content{
-        display: flex;
-        padding-top: 25px;
-    }
-
-
-
-    &__comment{
-        display: flex;
-        flex-direction: column;
-        padding-left: 30px;
-        width:100%;
-    }
-
-    &__label{
-        color: $Silver;
-        font-weight: 600;
-
-        // border-radius: 40%;
-
-        &--modified{
-            margin-top: 50px; 
-        }
-    }
-
-    &__input {
-        margin-top: 15px; 
-        width: calc(100% - 2.5rem);
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: 2px solid $Mercury;
-        height: 55px;
-        font-family: "AvenirNextLTPro";
-
-        &--modified{
-            @extend .form__input;
-            height: 200px;
-
-            &::placeholder{
-                padding-top: 10px;
-            }
-        }
-    }
-    
-    &__input::placeholder{
-        color: $BrainFlix-Black;
-    }
-
-    &__comment-button{
-        margin: auto;
-    color: white;
-    padding: 22px 0px;
-    width: 100%;
-    background-color: $BrainFlix-Blue;
-    border: none;
-    border-radius: 8px;
-    margin: 15px 0px;
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
 }
 
 .comment{
     &__section{
     display: flex;
     flex-direction: row;
+    padding: 16px 0px;
+    border-bottom: 1px solid $Mercury;
+
 }
 
     &__detail{
         display: flex;
         flex-direction: column;
+        padding-left: 16px;
     }
 
     &__info{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        @include bodycopy--mobile;
+    }
+
+    &__name{
+        @include subheader-mobile;
+    }
+
+    &__date{
+        color: $Silver;
+    }
+
+    &__content{
+        padding-top: 12px;
+        @include bodycopy--mobile;
     }
 }
+
+
+@media (min-width: $tablet-break-point) {
+    .input-button{
+        display: flex;
+        gap: 20px;
+    }
+
+    .comment{
+        &__info{
+            @include bodycopy--tablet;
+        }
+
+        &__section{
+            padding: 24px 0px;
+        } 
+        
+        &__name{
+        @include subheader-tablet;
+        }
+
+        &__content{
+            padding-top: 6px;
+            @include bodycopy--tablet;
+        }
+    }
+    }
+
