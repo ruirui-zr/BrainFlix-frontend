@@ -8,9 +8,9 @@ export default function VideoList({filteredVideos, handleSelectVideo}){
 
     return (
         <section className="video-list">
-            <div className="section-header">NEXT VIDEOS</div>
+            <h3 className="section-header">NEXT VIDEOS</h3>
             {filteredVideos.map((video) => (
-                <div className = "list__video" key = {video.id} onClick={ () => handleSelectVideo(video.id)}>
+                <div className = "individual-video" key = {video.id} onClick={ () => handleSelectVideo(video.id)}>
                     <div className="video-container">
                         <video className = "list__image" controls poster={video.image}> </video>
                     </div>

@@ -12,7 +12,6 @@ html{
     flex-direction: row;
     padding: 16px 0px;
     border-bottom: 1px solid $Mercury;
-
 }
 
     &__detail{
@@ -67,5 +66,14 @@ html{
             @include bodycopy--tablet;
         }
     }
-    }
+}
 
+@media (min-width: $desktop-break-point) {
+.comment{
+    &__section{
+        &:last-child {
+            border-bottom: none; 
+        }
+}
+}
+}

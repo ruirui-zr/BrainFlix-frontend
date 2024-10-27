@@ -119,3 +119,13 @@
         margin-top: 0px;
     }
 }
+
+@media (min-width: $desktop-break-point) {
+    .layout{
+        display: flex;
+        flex-direction: column;
+    }
+    .video-info--desktop{
+        width:100%;
+    }
+}

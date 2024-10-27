@@ -1,4 +1,6 @@
 @use './styles/partials/fonts' as *;
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
 
 
 
@@ -14,4 +16,15 @@
         // Add your active card styles here
         background-color: red;
     }
+}
+
+@media (min-width: $desktop-break-point) {
+    .desktop-layout{
+        display: flex;               /* Enables Flexbox layout */
+        flex-direction: row;         /* Positions items side by side */                 /* Adds space between Video and VideoList */               /* Takes full width of the container */
+        align-items: flex-start; 
+        padding: 0px 63px;
+    }
+
+
 }
