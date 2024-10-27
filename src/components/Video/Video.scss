@@ -89,6 +89,10 @@
         @include bodycopy--mobile;
     }
 
+    .selected__timestamp{
+        padding-top: 2px;
+    }
+
     .selected__description{
         @include bodycopy--tablet;
     }
