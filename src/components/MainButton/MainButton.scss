@@ -1,22 +1,38 @@
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+html{
+    font-family: "AvenirNextLTPro";
+}
+
 
 .main-button{
-    wIdth: 95%;
+    width: 100%;
     background-color: $BrainFlix-Blue;
-    position: relative; /* 相对于按钮定位图标 */
+    position: relative; 
     display: flex;
     align-items: center;
-    justify-content: center; /* 让文本内容居中 */
-    padding: 10px 40px; /* 调整左右内边距，确保文字不会被图标覆盖 */
+    justify-content: center;
+    padding: 10px 0px; 
     border: none;
     border-radius: 5px;
     color: white;
-    font-size: 16px;
+    @include labels-buttons--mobile;
 
     &__icon{
-        position: absolute; /* 绝对定位图标，使其在按钮的最左侧 */
-        left: 10px; /* 根据需要调整图标距离按钮左边的距离 */
-        width: 20px; /* 调整图标大小 */
+        position: absolute; 
+        left: 10px; 
+        width: 20px; 
         height: 20px;
+    }
+
+}
+
+@media (min-width: $tablet-break-point) {
+    .main-button{
+        margin: 0 24px;
+        width: 160px;
+        @include labels-buttons--tablet;
     }
 }

@@ -1,21 +1,31 @@
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
 
-.selected__image{
-    width: 400px;
+.layout{
+    @include padding--mobile;
 }
 
+.selected__image{
+    width: 100%;
+}
 
+.selected__title{
+    @include pageheader--mobile;
+    padding-top: 24px;
+}
 
 .divider{
     height: 1px;                 
     background-color:$Mercury;   
-    margin: 20px 0;   
+    margin: 16px 0;   
     border:none;
 }
 
 .video-meta{
     display: flex;
     flex-direction: row;
+    gap:20px;
 }
 
 .channel-date{
@@ -30,13 +40,82 @@
 
 .views{
     display: flex;
+    padding-bottom: 16px;
 }
 
 .likes{
     display: flex;
+    
 }
 
 .selected__channel{
     font-weight: bold;
+    @include subheader-mobile;
+    padding-bottom: 16px;
 }
 
+.selected__timestamp,
+.views-likes{
+    @include bodycopy--mobile;
+    color: $Silver;
+}
+
+.selected__likes,
+.selected__views{
+    padding-left: 10px;
+}
+
+.selected__description{
+    @include bodycopy--mobile;
+}
+
+@media (min-width: $tablet-break-point) {
+    .layout{
+        @include padding--tablet;
+    }
+
+    .selected__title{
+        @include pageheader--tablet;
+        padding-top: 32px;
+        padding-bottom: 16px;
+    }
+    
+    .selected__channel{
+        @include subheader-tablet;
+    }
+
+    .selected__timestamp,
+    .views-likes{
+        @include bodycopy--mobile;
+    }
+
+    .selected__description{
+        @include bodycopy--tablet;
+    }
+
+    .channel-date,
+    .views-likes{
+        display: flex;
+        flex-direction: row;
+        gap: 36px;
+    }
+
+    .views img,
+    .likes img{
+        width: 17px;
+    height: 18px;
+    }
+
+    .video-meta{
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .divider--mobile{
+        display: none;
+    }
+
+    .divider--tablet{
+        margin-top: 0px;
+    }
+}

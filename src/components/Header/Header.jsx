@@ -7,14 +7,13 @@ import Logo from "../Logo/Logo.jsx"
 export default function Header(){
     return (
         <header>
+            <div className="header">
             <div className="logo-container">
                 <Logo />
             </div>
             <div className="tablet__headerbar">
                 <div className="mobile__headerbar">
-                    <div className="search-container">
-                        <SearchBar />
-                    </div>
+                    <SearchBar />
                     <div className="avatar--mobile">
                         <Avatar />
                     </div>
@@ -23,6 +22,7 @@ export default function Header(){
                 <div className="avatar--tablet">
                     <Avatar />
                 </div>
+            </div>
             </div>
         </header>
     )

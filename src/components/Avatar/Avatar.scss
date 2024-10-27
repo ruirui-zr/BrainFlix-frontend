@@ -1,12 +1,11 @@
 @use '../../styles/partials/variables' as *;
 
 .avatar{
-    width: 50px;     
-    height: 50px;
+    width: 42px;     
+    height: 42px;
     background-color: $Mercury;  
     border-radius: 50%;   
     flex-shrink: 0;
     object-fit: cover;
     object-position: -7px center; 
-    margin-left: 10px;
 }

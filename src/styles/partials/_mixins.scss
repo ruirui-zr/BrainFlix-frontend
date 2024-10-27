@@ -1,0 +1,66 @@
+@mixin padding--mobile{
+    padding: 0px 16px;
+    @content;
+}
+
+@mixin padding--tablet{
+    padding: 0px 36px;
+    @content;
+}
+
+
+@mixin labels-buttons--mobile{
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 20px;
+    @content;
+}
+
+@mixin bodycopy--mobile{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    @content;
+}
+
+@mixin labels-buttons--tablet{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    @content;
+}
+
+@mixin bodycopy--tablet{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    @content;
+}
+
+@mixin pageheader--mobile{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    @content;
+}
+
+@mixin pageheader--tablet{
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 44px;
+    @content;
+}
+
+@mixin subheader-mobile{
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    @content;
+}
+
+@mixin subheader-tablet{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    @content;
+}

@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+// font-face
+@font-face {
+    font-family: "AvenirNextLTPro";
+    src: url(src/assets/fonts/AvenirNextLTPro-Regular.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "AvenirNextLTPro";
+    src: url(src/assets/fonts/AvenirNextLTPro-Demi.otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "AvenirNextLTPro";
+    src: url(src/assets/fonts/AvenirNextLTPro-Bold.otf);
+    font-weight: bold;
+}
