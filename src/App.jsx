@@ -27,10 +27,7 @@ function App() {
         <Header />
         <Video selectedVideo={selectedVideo} />
         <VideoList filteredVideos = {filteredVideos} handleSelectVideo={handleSelectVideo} />
-        
-        
-        {/* <VideoDetails />
-        <Comments /> */}
+      
       </>
   )
 }

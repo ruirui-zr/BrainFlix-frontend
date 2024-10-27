@@ -64,3 +64,10 @@
     line-height: 22px;
     @content;
 }
+
+@mixin sectionheader{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    @content;
+}

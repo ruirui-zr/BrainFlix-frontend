@@ -1,0 +1,118 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.avatar--posting{
+    margin-top: 22px;
+}
+
+.form{
+    &__title{
+        @include subheader-mobile;
+        padding-top: 16px;
+    }
+
+    &__content{
+        display: flex;
+        padding-top: 24px;
+        display: flex;
+    }
+
+    &__section{
+        display: flex;
+        flex-direction: row;
+        width:100%;
+        padding-top: 16px;
+    }
+
+    &__comment{
+        padding-left: 16px;
+        width: 100%;
+    }
+
+    &__label{
+        color: $Silver;
+        @include sectionheader;
+    }
+
+    &__input {
+        width: 90%;
+        padding: 10px 10px;
+        border-radius: 5px;
+        border: 2px solid $Mercury;
+        font-family: "AvenirNextLTPro";
+        height: 80px;
+        background-color: $Alabaster;
+
+        &::placeholder{
+            @include bodycopy--mobile;
+        }
+    }
+    
+    &__input::placeholder{
+        color: $BrainFlix-Black;
+    }
+
+    &__comment-button{
+        @include labels-buttons--mobile;
+        color: white;
+        padding: 10px 0px;
+        width: 100%;
+        background-color: $BrainFlix-Blue;
+        border: none;
+        border-radius: 8px;
+        margin-top: 12px;
+        position: relative; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__icon{
+            position: absolute; 
+            left: 10px; 
+            width: 20px; 
+            height: 20px;
+        }
+    }
+}
+
+.divider-layout{
+    margin-bottom: 0px;
+}
+@media (min-width: $tablet-break-point) {
+    .form{
+        &__title{
+            @include subheader-tablet;
+            padding-top: 16px;
+        }
+
+        &__comment{
+            padding-left: 16px;
+            width: 100%;
+        }
+    
+        &__label{
+            color: $Silver;
+            @include sectionheader;
+        }
+    
+        &__input {
+            width: 90%;
+            height: 24px;
+
+            &::placeholder{
+                @include bodycopy--tablet;
+            }
+        }
+
+        &__comment-button{
+            margin: 0px;
+            width: 40%;
+            @include labels-buttons--tablet;
+            }
+        }
+
+        .divider-layout{
+            margin-top: 24px;
+        }
+}
