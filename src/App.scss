@@ -1,3 +1,12 @@
+@use './styles/partials/fonts' as *;
+
+
+
+*{
+    font-family: "AvenirNextLTPro";
+    margin: 0;
+}
+
 .Video {
     width: 200px;
 
