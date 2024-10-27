@@ -23,12 +23,20 @@ function App() {
     return video.id !== selectedVideo.id
   })
 
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    const month = date.getMonth() + 1; 
+    const day = date.getDate();
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+};
+
   return (
       <>
         <Header />
         <VideoPlayer selectedVideo={selectedVideo} />
         <div className="desktop-layout">
-          <Video className= "video--desktop" selectedVideo={selectedVideo} />
+          <Video className= "video--desktop" selectedVideo={selectedVideo} formatDate={formatDate} />
           <VideoList className= "videolist--desktop" filteredVideos = {filteredVideos} handleSelectVideo={handleSelectVideo} />
         </div>
       </>
