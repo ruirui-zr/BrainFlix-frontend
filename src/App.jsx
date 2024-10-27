@@ -4,6 +4,7 @@ import VideoList from './components/VideoList/VideoList.jsx'
 import Video from './components/Video/Video.jsx'
 import VideosData from "./data/video-details.json"
 import { useState } from "react"
+import VideoPlayer from './components/VideoPlayer/VideoPlayer.jsx'
 
 console.log(VideosData);
 function App() {
@@ -25,9 +26,11 @@ function App() {
   return (
       <>
         <Header />
-        <Video selectedVideo={selectedVideo} />
-        <VideoList filteredVideos = {filteredVideos} handleSelectVideo={handleSelectVideo} />
-      
+        <VideoPlayer selectedVideo={selectedVideo} />
+        <div className="desktop-layout">
+          <Video className= "video--desktop" selectedVideo={selectedVideo} />
+          <VideoList className= "videolist--desktop" filteredVideos = {filteredVideos} handleSelectVideo={handleSelectVideo} />
+        </div>
       </>
   )
 }

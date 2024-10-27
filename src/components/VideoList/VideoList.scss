@@ -1,14 +1,20 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
 
 html{
     font-family: "AvenirNextLTPro";
 }
-
-
-.list__video{
+.video-list{
+    padding-bottom: 24px;
+}
+.individual-video{
     display: flex;
     justify-content: flex-start;
+    @include padding--mobile;
+    gap: 10px;
+    padding-bottom: 10px;
 }
 
 .video-container{
@@ -21,17 +27,66 @@ html{
     width: 100%; 
     height: auto;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .list-meta{
     display: flex;
     flex-direction: column;
     width: 60%;
+    justify-content: space-between;
+    padding: 2px 0px;
 }
 
 .section-header{
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 700;
+    @include padding--mobile;
+    @include sectionheader;
     color: $Silver;
+    padding: 16px 16px;
+}
+
+.list__title{
+    @include subheader-mobile;
+}
+
+.list__channel{
+    @include bodycopy--mobile;
+}
+
+@media (min-width: $tablet-break-point) {
+.video-list{
+    width: 50%;
+}
+.section-header{
+    @include padding--tablet;
+    @include sectionheader;
+    color: $Silver;
+}
+
+.individual-video{
+    display: flex;
+    justify-content: flex-start;
+    @include padding--tablet;
+    gap: 18px;
+    padding-bottom: 22px;
+}
+
+.list__title{
+    @include subheader-tablet;
+}
+
+.list__channel{
+    @include bodycopy--tablet;
+}
+
+.section-header {
+    padding: 24px 36px;
+}
+}
+
+@media (min-width: $desktop-break-point) {
+    .video-list{
+        width: 100%;
+        border-left: 1px solid $Mercury;
+    }
 }
