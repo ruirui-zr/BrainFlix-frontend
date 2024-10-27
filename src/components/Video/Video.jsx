@@ -3,7 +3,7 @@ import ViewsIcon from "../../assets/icons/views.svg"
 import LikesIcon from "../../assets/icons/likes.svg"
 import Comments from "../Comments/Comments.jsx"
 
-export default function Video({selectedVideo, formatDate}){
+export default function Video({selectedVideo, convertToDateString}){
     console.log(selectedVideo)
 console.log(selectedVideo.comments)
 
@@ -19,7 +19,7 @@ console.log(selectedVideo.comments)
                     <div className="video-meta">
                         <div className="channel-date">
                             <p className="selected__channel">{`By ${selectedVideo.channel}`}</p>
-                            <p className="selected__timestamp">{formatDate(selectedVideo.timestamp)}</p>    
+                            <p className="selected__timestamp">{convertToDateString(selectedVideo.timestamp)}</p>    
                         </div>
 
                         <div className="views-likes">
@@ -36,7 +36,7 @@ console.log(selectedVideo.comments)
 
                     <hr className="divider divider--tablet"></hr>
                     <p className="selected__description">{selectedVideo.description}</p>
-                    <Comments comments={selectedVideo.comments} formatDate={formatDate}/>
+                    <Comments comments={selectedVideo.comments} convertToDateString={convertToDateString}/>
                 </div>
             </div>
         </main>

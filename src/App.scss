@@ -20,10 +20,11 @@
 
 @media (min-width: $desktop-break-point) {
     .desktop-layout{
-        display: flex;               /* Enables Flexbox layout */
-        flex-direction: row;         /* Positions items side by side */                 /* Adds space between Video and VideoList */               /* Takes full width of the container */
-        align-items: flex-start; 
-        padding: 0px 63px;
+        display: flex;
+        max-width: 1200px;           
+        margin: 0 auto;              
+        padding: 0 63px;              
+        justify-content: center;     
     }
 
 
