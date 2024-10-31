@@ -1,8 +1,9 @@
 import "./Comments.scss"
 import Form from "../Form/Form.jsx"
+import { format } from 'timeago.js';
 
 
-export default function Comments({comments, convertToDateString}) {
+export default function Comments({comments = []}) {
     return (
     <>
     <Form comments={comments}/>
@@ -13,7 +14,7 @@ export default function Comments({comments, convertToDateString}) {
             <div className="comment__detail">
                 <div className="comment__info">
                     <p className="comment__name">{comment.name}</p>
-                    <p className="comment__date">{convertToDateString(comment.timestamp)}</p>
+                    <p className="comment__date">{format(comment.timestamp)}</p>
                 </div>
                 <p className="comment__content">{comment.comment}</p>
             </div>

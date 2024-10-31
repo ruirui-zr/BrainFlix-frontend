@@ -22,7 +22,7 @@ export default function Form({comments}){
                     </div>
                 </div>
             </div>
-            <hr class="divider divider-layout"></hr>
+            <hr className="divider divider-layout"></hr>
         </form>
     )
 }

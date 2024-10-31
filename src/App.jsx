@@ -1,70 +1,44 @@
-import './App.scss'
+// import './App.scss'
 import Header from "../src/components/Header/Header.jsx"
-import VideoList from './components/VideoList/VideoList.jsx'
-import Video from './components/Video/Video.jsx'
-import VideosData from "./data/video-details.json"
-import { useState } from "react"
-import VideoPlayer from './components/VideoPlayer/VideoPlayer.jsx'
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react"
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import HomePage from "./pages/HomePage/HomePage";
+import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
+import VideoDetailPage from "./pages/VideoDetailPage/VideoDetailPage"
+import axios from 'axios';
 
-console.log(VideosData);
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(VideosData[0]);
+  const API_KEY ="9ab57832-674c-44eb-92ef-84bb809f032e";
+  const [videos, setVideos] = useState([]);
 
-
-  const handleSelectVideo = (ClickedId)=> {
-    console.log(ClickedId);
-
-    const displayVideo = VideosData.find((video)=> ClickedId === video.id)
-    console.log(displayVideo)
-    setSelectedVideo(displayVideo)
-  }
-
-  const filteredVideos = VideosData.filter((video) => {
-    return video.id !== selectedVideo.id
-  })
-
-  function convertToDateString(timestamp){
-    const now = new Date();
-    const commentDate = new Date(timestamp); 
-
-    const timeDifference = Math.abs(now - commentDate);
-
-    const seconds = Math.floor(timeDifference / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    const weeks = Math.floor(days / 7);
-    const months = Math.floor(days / 30);
-    const years = Math.floor(days / 365);
-
-    if (seconds < 3) {
-        return 'Just now'
-    } else if (seconds < 60) {
-        return `${seconds} seconds ago`;
-    } else if (minutes < 60) {
-        return `${minutes} minutes ago`;
-    } else if (hours < 24) {
-        return `${hours} hours ago`;
-    } else if (days < 7) {
-        return `${days} days ago`;
-    } else if (weeks < 5) {
-        return `${weeks} weeks ago`;
-    } else if (months <= 12) {
-        return `${months} months ago`;
-    } else {
-        return `${years} years ago`;
+  async function getVideos(){
+    try{
+        const response = await axios.get(`https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=${API_KEY}`)
+        console.log(response.data)
+        setVideos(response.data)
+    } catch (error) {
+        console.error("Error Fetching videos", error);
     }
   }
 
+  useEffect(() =>{
+    getVideos();
+  },[])
+
   return (
-      <>
+    <>
+      <BrowserRouter>
         <Header />
-        <VideoPlayer selectedVideo={selectedVideo} />
-        <div className="desktop-layout">
-          <Video className= "video--desktop" selectedVideo={selectedVideo} convertToDateString={convertToDateString} />
-          <VideoList className= "videolist--desktop" filteredVideos = {filteredVideos} handleSelectVideo={handleSelectVideo} />
-        </div>
-      </>
+        <Routes>
+          <Route path="/" element={<HomePage defaultVideo={videos?.[0]}/>} />
+          <Route path="/videos/:videoId" element={<VideoDetailPage videosData={videos}/>} />
+          <Route path="/upload" element={<VideoUploadPage />} />
+
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 

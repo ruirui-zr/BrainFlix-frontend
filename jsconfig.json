@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es6",                       // Sets ECMAScript target version
+      "module": "commonjs",                  // CommonJS modules (default for Node.js)
+      "jsx": "react-jsx",                    // Enables JSX syntax support in React
+      "baseUrl": "src",                      // Sets base URL for imports (optional)
+      "paths": {                             // Helps with module resolution
+        "@components/*": ["components/*"],
+        "@utils/*": ["utils/*"]
+      }
+    },
+    "include": ["src/**/*"]                  // Includes all files in src folder
+  }
+  

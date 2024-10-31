@@ -2,12 +2,10 @@ import "./Video.scss"
 import ViewsIcon from "../../assets/icons/views.svg"
 import LikesIcon from "../../assets/icons/likes.svg"
 import Comments from "../Comments/Comments.jsx"
+import { format } from 'timeago.js';
 
-export default function Video({selectedVideo, convertToDateString}){
+export default function Video({selectedVideo}){
     console.log(selectedVideo)
-console.log(selectedVideo.comments)
-
-
     return(
         <main className="selected-video" key = {selectedVideo.id}>
             <div className="layout">
@@ -19,7 +17,7 @@ console.log(selectedVideo.comments)
                     <div className="video-meta">
                         <div className="channel-date">
                             <p className="selected__channel">{`By ${selectedVideo.channel}`}</p>
-                            <p className="selected__timestamp">{convertToDateString(selectedVideo.timestamp)}</p>    
+                            <p className="selected__timestamp">{format(selectedVideo.timestamp)}</p>    
                         </div>
 
                         <div className="views-likes">
@@ -36,7 +34,7 @@ console.log(selectedVideo.comments)
 
                     <hr className="divider divider--tablet"></hr>
                     <p className="selected__description">{selectedVideo.description}</p>
-                    <Comments comments={selectedVideo.comments} convertToDateString={convertToDateString}/>
+                    <Comments comments={selectedVideo.comments}/>
                 </div>
             </div>
         </main>
