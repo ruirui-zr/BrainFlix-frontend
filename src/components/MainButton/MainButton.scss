@@ -29,6 +29,10 @@ html{
 
 }
 
+.link-no-underline {
+    text-decoration: none;
+}
+
 @media (min-width: $tablet-break-point) {
     .main-button{
         margin: 0 24px;

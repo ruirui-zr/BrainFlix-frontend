@@ -6,7 +6,7 @@ export default function VideoList({filteredVideos}){
         <section className="video-list">
             <h3 className="section-header">NEXT VIDEOS</h3>
             {filteredVideos.map((video) => (
-                <Link to={`/videos/${video.id}`} className = "individual-video" key={video.id}>
+                <Link to={`/videos/${video.id}`} className = "individual-video link-no-underline" key={video.id}>
                     <div className="video-container">
                         <img className = "list__image" src={video.image} />
                     </div>

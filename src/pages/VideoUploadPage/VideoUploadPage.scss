@@ -1,0 +1,280 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+*{
+    font-family: "AvenirNextLTPro";
+    margin: 0;
+}
+
+.divider--uploadpage{
+    height: 1px;                 
+    background-color: $Mercury;   
+    border:none;
+}
+
+.divider--uploadvideo{
+    display: none;
+}
+
+.layout{
+    @include padding--mobile;
+}
+
+.title{
+    @include pageheader--mobile;
+    padding: 20px 0px;
+
+}
+
+.thumbnail__label{
+    @include sectionheader;
+    color: $Silver;
+}
+
+.thumbnail__image--container{
+    width: 100%;
+    height: 100%;
+    background-color: $Mercury;
+    margin-bottom: 16px;
+}
+
+.thumbnail__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.title__label{
+    @include sectionheader;
+        margin-top: 16px;
+        color: $Silver;
+}
+
+.form__input--title{
+    width: 90%;
+        padding: 10px 10px;
+        border-radius: 5px;
+        border: 2px solid $Mercury;
+        font-family: "AvenirNextLTPro";
+        height: 20px;
+        background-color: $Alabaster;
+        margin-bottom: 10px;
+
+        &::placeholder{
+            @include bodycopy--mobile;
+            color: $BrainFlix-Black;
+        }
+}
+
+.form{
+    &__input--des {
+        width: 90%;
+        padding: 10px 10px;
+        border-radius: 5px;
+        border: 2px solid $Mercury;
+        font-family: "AvenirNextLTPro";
+        height: 80px;
+        background-color: $Alabaster;
+
+        &::placeholder{
+            @include bodycopy--mobile;
+        }
+    }
+    
+    &__input::placeholder{
+        color: $BrainFlix-Black;
+    }
+
+    &__publish-button{
+        @include labels-buttons--mobile;
+        color: white;
+        padding: 10px 0px;
+        width: 100%;
+        background-color: $BrainFlix-Blue;
+        border: none;
+        border-radius: 8px;
+        margin-top: 12px;
+        position: relative; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__icon{
+            position: absolute; 
+            left: 10px; 
+            width: 20px; 
+            height: 20px;
+        }
+    }
+
+    &__cancel-button{
+        @include labels-buttons--mobile;
+        color: $BrainFlix-Blue;
+        padding: 10px 0px;
+        width: 100%;
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        margin-top: 12px;
+        position: relative; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.link-no-underline{
+    text-decoration: none;
+}
+}
+
+@media (min-width: $tablet-break-point) {
+    .title{
+        @include pageheader--tablet;
+    }
+    .layout{
+        @include padding--tablet;
+    }
+
+    .thumbnail__image--container{
+        width: 50%;
+        height: 100%;
+        background-color: $Mercury;
+        margin-bottom: 16px;
+    }
+    .divider--uploadvideo{
+        height: 1px;                 
+        background-color: $Mercury;   
+        border:none;
+        margin-bottom: 16px;
+        display: block; 
+    }
+    .thumbnail__image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+
+    .selected__title{
+        @include pageheader--tablet;
+        padding-top: 32px;
+        padding-bottom: 16px;
+    }
+
+    .form{
+        &__title{
+            @include subheader-tablet;
+            padding-top: 16px;
+        }
+
+        &__comment{
+            padding-left: 16px;
+            width: 100%;
+        }
+    
+        &__label{
+            color: $Silver;
+            @include sectionheader;
+        }
+
+        &__input--title{
+            width: 95%;
+        }
+    
+        &__input--des {
+            width: 95%;
+            height: 70px;
+            margin-bottom: 16px;
+
+            &::placeholder{
+                @include bodycopy--tablet;
+            }
+        }
+
+        &__comment-button{
+            margin: 0px;
+            width: 30%;
+            @include labels-buttons--tablet;
+            }
+        }
+
+    .buttons{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .form__publish-button {
+        width: 160px;
+        @include labels-buttons--tablet;
+        margin: 0px;
+
+
+    }
+
+    .form__cancel-button {
+        width: 160px;
+        @include labels-buttons--tablet;
+        margin: 0px;
+    }
+
+}
+
+
+@media (min-width: $desktop-break-point) {
+    .title{
+        @include pageheader--tablet;
+    }
+
+    div.layout{
+        display: block;
+        width: 100vw; 
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        padding: 0 112px;;
+    }
+
+    .videoupload--desktop-layout {
+        display: flex;
+        flex-direction: row; // 横向排列子元素
+        width: 100%; // 占满父级宽度
+        gap: 20px; // 选填，调整两个 div 之间的间距
+    }
+    
+    // .videoupload--desktop-layout > div {
+    //     flex: 1; // 让两个 div 平均分配宽度
+    // }
+
+    // .thumbnail__image--container{
+    //     width: 30%;
+    //     height: auto;
+    //     background-color: $Mercury;
+    //     margin-bottom: 16px;
+    // }
+
+    .thumbnail__image--container {
+        width: 95%;
+        height: auto; 
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .thumbnail__image {
+        width: 100%;
+        height: auto; 
+        max-height: 200px; 
+        object-fit: cover; 
+    }
+
+    .videoupload-section{
+        width: 70%;  
+    }
+
+
+}

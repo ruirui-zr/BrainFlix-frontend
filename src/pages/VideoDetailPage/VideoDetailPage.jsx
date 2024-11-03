@@ -14,18 +14,18 @@ function VideoDetailPage({videosData}) {
     const API_KEY ="9ab57832-674c-44eb-92ef-84bb809f032e";
 
     async function getVideoById(){
-      try{
-          const response = await axios.get(`https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=${API_KEY}`)
-          console.log(response.data)
-          setVideo(response.data)
-      } catch (error) {
-          console.error("Error Fetching videos", error);
-      }
+        try{
+            const response = await axios.get(`https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=${API_KEY}`)
+            console.log(response.data)
+            setVideo(response.data)
+        } catch (error) {
+            console.error("Error Fetching videos", error);
+        }
     }
 
     useEffect(() => {
         getVideoById();
-      }, [videoId]);
+        }, [videoId]);
     
     return (
         <>
