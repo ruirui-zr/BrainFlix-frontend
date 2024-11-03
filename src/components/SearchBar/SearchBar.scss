@@ -34,6 +34,7 @@ html{
     flex: 1;
     max-width: 90%; 
     position: relative;
+
 }
 
 @media (min-width: $tablet-break-point) {
@@ -44,11 +45,18 @@ html{
         flex: 1;
         max-width: 100%; 
         position: relative;
-        display: flex;
-        justify-content: flex-end;
     }
 
     .search-input::placeholder {
         @include bodycopy--tablet;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 13px; 
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px; 
+        height: 20px; 
     }
 }
