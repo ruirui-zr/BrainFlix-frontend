@@ -3,13 +3,13 @@
 @media (min-width: $tablet-break-point) {
     .selected__image--container {
         display: flex;
-        background-color: black;        /* Black background for the remaining space */
-        width: 100%;                    /* Ensure the container takes full width */
-        justify-content: center;    /* Aligns the video to the left */
+        background-color: black;       
+        width: 100%;                   
+        justify-content: center;   
     }
     
     .selected__image {
-        width: 90%;                     /* Video occupies 60% of the container width */
+        width: 90%;                    
     }
 }
 
@@ -17,12 +17,12 @@
 @media (min-width: $desktop-break-point) {
     .selected__image--container {
         display: flex;
-        background-color: black;        /* Black background for the remaining space */
-        width: 100%;                    /* Ensure the container takes full width */
-        justify-content: center;    /* Aligns the video to the left */
+        background-color: black;        
+        width: 100%;                   
+        justify-content: center;   
     }
     
     .selected__image {
-        width: 70%;                     /* Video occupies 60% of the container width */
+        width: 70%;                     
     }
 }
