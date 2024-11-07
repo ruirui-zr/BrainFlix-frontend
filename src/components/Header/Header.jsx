@@ -11,7 +11,7 @@ export default function Header(){
             <div className="header">
             <div className="logo-container">
                 <Link to="/">
-                    <img className="logo" src={LogoIcon} alt="logo" />
+                    <img className="logo" src={LogoIcon} alt="brainflix_logo" />
                 </Link>
             </div>
             <div className="tablet__headerbar">

@@ -3,18 +3,18 @@
 // font-face
 @font-face {
     font-family: "AvenirNextLTPro";
-    src: url(src/assets/fonts/AvenirNextLTPro-Regular.otf);
+    src: url(src/assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "AvenirNextLTPro";
-    src: url(src/assets/fonts/AvenirNextLTPro-Demi.otf);
+    src: url(src/assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");;
     font-weight: 600;
 }
 
 @font-face {
     font-family: "AvenirNextLTPro";
-    src: url(src/assets/fonts/AvenirNextLTPro-Bold.otf);
+    src: url(src/assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");;
     font-weight: bold;
 }

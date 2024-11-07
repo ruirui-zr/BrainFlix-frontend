@@ -10,7 +10,7 @@ export default function Comments({comments = []}) {
     <div key={comments.id}>
         {comments.map((comment) => (
         <div className="comment__section" key= {comment.id}>
-            <div className="avatar" alt="user-avatar" />
+            <div className="avatar"/>
             <div className="comment__detail">
                 <div className="comment__info">
                     <p className="comment__name">{comment.name}</p>

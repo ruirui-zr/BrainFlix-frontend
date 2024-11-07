@@ -18,7 +18,7 @@ export default function Form({comments}){
                     <textarea className="form__input" name="comment" id="comment"
                             placeholder="Add a new comment"></textarea>
                     <button className = "form__comment-button" type="submit">
-                        <img className = "form__comment-button__icon" src={CommentIcon} />COMMENT</button>
+                        <img className = "form__comment-button__icon" alt="icon for comment-button" src={CommentIcon} />COMMENT</button>
                     </div>
                 </div>
             </div>
