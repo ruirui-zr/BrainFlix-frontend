@@ -59,7 +59,7 @@
         border-radius: 5px;
         border: 2px solid $Mercury;
         font-family: "AvenirNextLTPro";
-        height: 20px;
+        height: 44px;
         background-color: $Alabaster;
         margin-bottom: 10px;
 
@@ -230,31 +230,22 @@
 
     div.layout{
         display: block;
-        width: 100vw; 
+        // width: 100vw; 
+        width: calc(100% - 14rem);
         max-width: 100%;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        padding: 0 112px;;
+        padding: 0 7rem;;
     }
 
     .videoupload--desktop-layout {
         display: flex;
-        flex-direction: row; // 横向排列子元素
-        width: 100%; // 占满父级宽度
-        gap: 20px; // 选填，调整两个 div 之间的间距
+        flex-direction: row;
+        width: 100%; 
+        gap: 20px; 
     }
     
-    // .videoupload--desktop-layout > div {
-    //     flex: 1; // 让两个 div 平均分配宽度
-    // }
-
-    // .thumbnail__image--container{
-    //     width: 30%;
-    //     height: auto;
-    //     background-color: $Mercury;
-    //     margin-bottom: 16px;
-    // }
 
     .thumbnail__image--container {
         width: 95%;

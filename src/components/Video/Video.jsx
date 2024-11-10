@@ -8,7 +8,7 @@ export default function Video({selectedVideo}){
     console.log(selectedVideo)
     return(
         <main className="selected-video" key = {selectedVideo.id}>
-            <div className="layout">
+            {/* <div className="layout"> */}
                 <div className="video-info--desktop">
                     <p className="selected__title">{selectedVideo.title}</p>
 
@@ -36,7 +36,7 @@ export default function Video({selectedVideo}){
                     <p className="selected__description">{selectedVideo.description}</p>
                     <Comments comments={selectedVideo.comments}/>
                 </div>
-            </div>
+            {/* </div> */}
         </main>
     )
 }

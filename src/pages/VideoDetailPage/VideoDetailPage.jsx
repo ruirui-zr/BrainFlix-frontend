@@ -7,25 +7,33 @@ import { useState, useEffect } from "react"
 import axios from 'axios';
 
 function VideoDetailPage({videosData}) {
-    const { videoId } = useParams();
+    if (videosData.length === 0) {
+        return <div>No videos available...</div>
+    }
+    let { videoId } = useParams();
+    if (videoId == null) {
+        videoId = videosData[0].id;
+    }
     const [video, setVideo] = useState({});
-    const filteredVideos = videosData.filter((video) => {return video.id !== videoId})
 
-    const API_KEY ="9ab57832-674c-44eb-92ef-84bb809f032e";
+    // Filter videos excluding the currently selected video ID
+    const filteredVideos = videosData.filter((video) => video.id !== videoId);
+
+    useEffect(() => {
+        if (videoId) {
+            getVideoById();
+        }
+    }, [videoId]);
 
     async function getVideoById(){
         try{
-            const response = await axios.get(`https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=${API_KEY}`)
+            const response = await axios.get(`http://localhost:8686/videos/${videoId}`)
             console.log(response.data)
             setVideo(response.data)
         } catch (error) {
             console.error("Error Fetching videos", error);
         }
     }
-
-    useEffect(() => {
-        getVideoById();
-        }, [videoId]);
     
     return (
         <>

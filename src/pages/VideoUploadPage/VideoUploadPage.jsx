@@ -3,11 +3,30 @@ import uploadIcon from "../../assets/icons/upload.svg"
 import "./VideoUploadPage.scss"
 import { Link } from 'react-router-dom'
 import React, { useState } from 'react';
+import axios from 'axios';
 
 
 function VideoUploadPage() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+
+    const uploadHandler = async () => {
+        const videoData = {
+            title: title.trim(),
+            description: description.trim()
+        };
+
+        try {
+            const response = await axios.post('http://localhost:8686/videos', videoData);
+
+            if (response.status === 201) {
+                setTitle('');
+                setDescription('');
+            }
+        } catch (error) {
+            console.error("Error uploading video:", error);
+        }
+    };
 
     const isFormValid = title.trim() !== '' && description.trim() !== '';
     return (
@@ -41,9 +60,9 @@ function VideoUploadPage() {
                 <hr className="divider--uploadvideo divider-display"></hr>
 
                 <div className="buttons" >
-                <Link to="/" className="link-no-underline">
+                <Link to="/" reloadDocument className="link-no-underline">
                     <button className = "form__publish-button"
-                    onClick={() => alert('Video uploaded successfully.')} disabled={!isFormValid}><img className = "form__publish-button__icon" src={uploadIcon} />UPLOAD</button>
+                    onClick={uploadHandler} disabled={!isFormValid}><img className = "form__publish-button__icon" src={uploadIcon} />PUBLISH</button>
                 </Link>
 
                 <Link to="/" className="link-no-underline">
